@@ -37,3 +37,12 @@ print(a.nbytes) # --> 6
 print(b.nbytes) # --> 48 
 print()
 
+#automatic type conversions
+list = [6.1,4.6,3.4,9.0,8,1.6] #8 is int
+res = np.array(list)
+print(res) #8 converted to 'float64'
+print(type(res))
+print(type(res[0]))
+print(res + 2)
+print(res + 3.2)
+#similarly if one type is str and other are int , then numpy arr implicitly converts int elements to str
