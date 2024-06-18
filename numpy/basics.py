@@ -46,3 +46,9 @@ print(type(res[0]))
 print(res + 2)
 print(res + 3.2)
 #similarly if one type is str and other are int , then numpy arr implicitly converts int elements to str
+
+#reorganizing arrays
+before = np.array([[1,2,3,4],[5,6,7,8]])
+print(before)
+after = before.reshape((4,2)) #will work as long as both shape has equal number of items
+print(after)
