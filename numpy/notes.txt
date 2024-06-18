@@ -1,0 +1,21 @@
+1. NumPy: it is a multidimensional array lib.
+2. NumPy faster than list:
+    - NumPy uses fixed type of data.
+    - Also cuz:
+        NumPy uses 4 bytes to store an int
+        List uses inbuilt int type: size - 4 bytes
+                                    Reference count - 8 bytes
+                                    object type - 8 bytes
+                                    object value - 8 byte
+    - faster to read less bytes of memory 
+    - no type checking when iterating through objects
+    - NumPy uses contiguous memory i.e, data is next to each other but in lists the data is scattered and the list indexes points to these data.
+        benefits: SIMD vector processing,  effective cache utilization
+3. We can do a lot more in numpy arrays than list. ex: multiply 2 array with respective element and matrice multiplication
+4. Applications: 
+                - maths(matlab replacement)
+                - plotting(matplotlib)
+                - backend(pandas, connect 4, digital photography)
+                - machine learning
+
+                
