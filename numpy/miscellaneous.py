@@ -2,6 +2,7 @@ import numpy as np
 
 #load data from file
 filedata = np.genfromtxt(r"C:\Users\duavi\Documents\code\python_libs\python_lib\numpy\data.txt", delimiter=',')
+#for preventing file not found, in terminal cd to numpy
 print(filedata) #float format
 print(filedata.astype('int32')) #int format (its a copy)
 #give file name or path (here file not found so given path)
