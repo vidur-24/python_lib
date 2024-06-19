@@ -1,0 +1,21 @@
+pip install pandas --> to install library
+pip install --uppgrade pandas --> to update library
+
+1. Pandas: open source data analysis library
+2. We use pandas instead of excel cuz we can use python functions and ML technologies provided, hence can do better analysis
+3. also some limitations in excel like limit of data in a cell
+4. It leverages the power and speed of numpy (numpy is fast and gives better storage) to make data analysis and preprocessing easy for data scientists
+5. provides rich and highly robust data operations
+
+--> Pandas has 2 type Data Structures:
+        - Series(1D) = one dim array with indexes, it stores a single column or row of data in Dataframe
+        - Dataframe(2D) = tabular spreadsheet like struct representing rows each of which contains one or multiple columns
+    - 1D arr capable of holding any type of data (Series contains same datatype)
+    - 2D arr with columns of potentially diff data type (DF contains columns of diff datatype)
+    -train is a DF
+        - type(train['Speed']) --> will give type of series as speed is a column of train DF
+        - type(train) --> will give type DF
+    
+--> Jupyter Notebook is good for data analysis.
+
+--> for more resources we can search on google
