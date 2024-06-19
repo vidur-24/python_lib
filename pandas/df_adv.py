@@ -69,7 +69,7 @@ print(newdf.head())
 
 #to remove column(drop)
 newdf.drop(0,axis=1) #removes column(axis=1) named 0
-#note: above returns a view not changes newdf in place
+#NOTE: above returns a view not changes newdf in place
 print(newdf.head())
 #changing in place 
 newdf = newdf.drop(0,axis=1)
@@ -103,6 +103,48 @@ print(newdf.reset_index(drop=True)) #if drop=False then it creates a column name
 newdf.reset_index(drop=True,inplace=True)
 print(newdf.head())
 
-#more functions
+#checks null values
+print(newdf['C'].isnull()) #returns a series of bool values where the value in row is null i.e, 0
+
+#makes every value of column B None
+newdf['B'] = None #not preferred (same reason WARNING)
+newdf.loc[:,['B']] = None #preffered
+print(newdf)
+print(newdf['B'].isnull())
+print()
+
+#drop rows with null
+df = pd.DataFrame({
+    "name" : ['Alfred','Batman','Alfred'],
+    "toy" : [np.nan,'Batmobile','Bullwhip'], #NEW FUNCTIONS
+    "born" : [pd.NaT,pd.Timestamp("1940-04-25"),pd.NaT] #NEW FUNCTIONS
+})
+print(df)
+print(df.dropna()) #drops rows with any null values
+print(df.dropna(how='all')) #drops rows with all null values
+print(df.dropna(how='all',axis=1)) #drops column with all null values
+#NOTE: they do not change original df
 
 
+#drop duplicates
+print(df.drop_duplicates()) #nothing happens (does not take axis as parameter)
+print(df.drop_duplicates(subset=['name'])) #removes duplicates row which have repeated themselves in name column, but keeps the first duplicate
+print(df.drop_duplicates(subset=['name'], keep='last')) #removes duplicates row which have repeated themselves in name column, but keep the last duplicate
+print(df.drop_duplicates(subset=['name'], keep=False)) #removes all duplicates, doesnt keep any copy
+print()
+
+#get shape
+print(df.shape, end="\n\n") # --> (3,3)
+
+#give infor/details about df
+print(df.info(),end="\n\n") 
+
+#unique value count
+print(df['name'].value_counts(dropna=False)) #give value count of each unique value in that column (includes None values as dropna=False)
+print(df['toy'].value_counts(dropna=False)) #give value count of each unique value in that column (includes None values as dropna=False)
+print(df['toy'].value_counts(dropna=True)) #give value count of each unique value in that column (doesnt includes None values as dropna=True)
+print()
+
+#checking null values
+print(df.isnull()) #returns df with bool values which are null
+print(df.notnull()) #returns df with bool values which are not null
